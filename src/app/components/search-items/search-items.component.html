@@ -16,14 +16,15 @@
             <option value="2">Include (only available with Name)</option>
         </select>
     </div>
+</div>
     <br>
-    <div class="col">
+    <div class="row">
         <div class="input-group mb-3">
             <input type="text" class="form-control" aria-describedby="button-addon2" id="input" >
             <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="searchItems()">Search</button>
         </div>
     </div>
-</div>
+
 <br *ngIf="isLoading">
 <div class="d-flex justify-content-center text-success" *ngIf="isLoading">
     <div class="spinner-border" role="status">
@@ -64,10 +65,14 @@
     </table>    
 </div>
 <div class="alert alert-danger d-flex align-items-center" role="alert" *ngIf="isEmpty">
-    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-    <div>
-      No items related to input : <b>{{input}}</b> 
+    <div class="row">
+    <div class="col">
+        No items related to input : <b>{{input}}</b> 
     </div>
-  </div>
+    <div class="col">
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+        </div>
+</div>
+</div>
 
 
