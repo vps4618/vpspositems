@@ -35,6 +35,9 @@
 <div class="table-responsive">
     <table class="table table-striped table-bordered">
         <thead>
+            <tr *ngIf="showDateTime">
+                <td scope="col" colspan="9" class="DateTime">Last Updated Date : {{DateTime[0].ItemName}} {{DateTime[0].Barcode}}</td>
+            </tr>
             <tr>
                 <th scope="col">Actions</th>
                 <th scope="col">Item Id</th>

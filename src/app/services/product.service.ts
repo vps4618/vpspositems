@@ -95,8 +95,12 @@ export class ProductService {
     return findedItems;
     }
     
-    getAllProducts():Observable<Product[]>{
-      return this.http.get<Product[]>(this.baseUrl+'items/');
+    getDateTimeBySinhalaName(Type:any){
+      const findedItems = items.filter((item:any)=> {
+        return item.SinhalaName == Type;
+    })
+    return findedItems;
     }
+
   }
 

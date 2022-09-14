@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/product.model';
-
+import { DateTime } from 'src/app/models/DateTime.model';
 @Component({
   selector: 'app-search-items',
   templateUrl: './search-items.component.html',
@@ -9,24 +9,25 @@ import { Product } from 'src/app/models/product.model';
 })
 export class SearchItemsComponent implements OnInit {
   public selectedProduct !:Product[];
+  public DateTime !: DateTime[];
+  public updatedDate !:string;
+  public updatedTime !: string;
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
-    // this.productService.getProductByName('munchee').subscribe((res=>{
-    //   this.selectedProduct = res;
-    //   console.log(this.selectedProduct);
-    // }))
-    // this.productService.getAllProducts().subscribe((res) => {
-    //   this.selectedProduct =  res;
-    // })
+
   }
   public isLoading !:boolean;
   public isEmpty !:boolean;
   public input !:any;
+  public showDateTime :boolean=false;
 
   searchItems(){
     this.isEmpty = false;
     this.isLoading = true;
+    this.showDateTime = true;
+    this.DateTime = this.productService.getDateTimeBySinhalaName("DateTime");
+    
     setTimeout(() => {
       const inputField = document.getElementById('input') as HTMLInputElement;
       this.input = inputField.value;

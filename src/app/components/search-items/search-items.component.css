@@ -5,3 +5,7 @@ button{
     border: 1px solid grey !important;
     border-radius: 3px;
 }
+
+.DateTime{
+    text-align: center;
+}
