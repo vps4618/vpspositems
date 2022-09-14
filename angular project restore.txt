@@ -1,3 +1,0 @@
-run npm install to recover angular project cloned from github
-
-after restoration run npm start to serve application.
