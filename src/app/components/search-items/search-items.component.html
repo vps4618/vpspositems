@@ -38,6 +38,10 @@
             <tr *ngIf="showDateTime">
                 <td scope="col" colspan="9" class="DateTime">Last Updated Date : {{DateTime[0].ItemName}} {{DateTime[0].Barcode}}</td>
             </tr>
+            <tr *ngIf="showDateTime">
+                <td scope="col" colspan="9" class="DateTime">Number Of Items : {{numberOfItems}}</td>
+            </tr>
+            <br>
             <tr>
                 <th scope="col">Actions</th>
                 <th scope="col">Item Id</th>

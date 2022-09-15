@@ -102,5 +102,10 @@ export class ProductService {
     return findedItems;
     }
 
+    getNumberOfItems(){
+      const numberOfItems:string = items.length;
+      return numberOfItems;
+    }
+
   }
 

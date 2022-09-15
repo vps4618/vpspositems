@@ -12,6 +12,7 @@ export class SearchItemsComponent implements OnInit {
   public DateTime !: DateTime[];
   public updatedDate !:string;
   public updatedTime !: string;
+  public numberOfItems !:string;
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
@@ -27,7 +28,8 @@ export class SearchItemsComponent implements OnInit {
     this.isLoading = true;
     this.showDateTime = true;
     this.DateTime = this.productService.getDateTimeBySinhalaName("DateTime");
-    
+    this.numberOfItems = this.productService.getNumberOfItems();
+  
     setTimeout(() => {
       const inputField = document.getElementById('input') as HTMLInputElement;
       this.input = inputField.value;
