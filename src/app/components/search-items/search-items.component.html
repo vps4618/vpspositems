@@ -39,7 +39,10 @@
                 <td scope="col" colspan="9" class="DateTime">Last Updated Date : {{DateTime[0].ItemName}} {{DateTime[0].Barcode}}</td>
             </tr>
             <tr *ngIf="showDateTime">
-                <td scope="col" colspan="9" class="DateTime">Number Of Items : {{numberOfItems}}</td>
+                <td scope="col" colspan="9" class="DateTime">Number Of All Items : {{numberOfItems}}</td>
+            </tr>
+            <tr *ngIf="!isLoading">
+                <td scope="col" colspan="9" class="DateTime">Number Of finded Items : {{countOfFindedProducts}}</td>
             </tr>
             <br>
             <tr>

@@ -22,6 +22,7 @@ export class SearchItemsComponent implements OnInit {
   public isEmpty !:boolean;
   public input !:any;
   public showDateTime :boolean=false;
+  public countOfFindedProducts:any = 0;
 
   searchItems(){
     this.isEmpty = false;
@@ -61,6 +62,7 @@ export class SearchItemsComponent implements OnInit {
       }else{
         alert('Please select input type');
       }
+      this.countOfFindedProducts = this.selectedProduct.length;
 
       if(this.selectedProduct.length == 0){
         this.isEmpty = true;
